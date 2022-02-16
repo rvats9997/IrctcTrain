@@ -1,0 +1,30 @@
+package com.selenium.basics;
+
+import java.sql.Driver;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.*;
+
+
+
+
+
+public class FirstSeleniumTest {
+	
+	@Test
+	public void verifyFacebookHomePage() {
+		String URL="https://www.facebook.com";
+		
+		System.setProperty("webDriver.Chrome.driver","C:/Users/RAUNAK VATS/eclipse-workspace/FirstSeleniumProject/Drivers/chromedriver.exe");
+		WebDriver driver=new ChromeDriver();
+		driver.get(URL);
+		
+		String pageTitle= driver.getTitle();
+		System.out.println("the page title is :"+ pageTitle);
+		Assert.assertEquals(pageTitle, "Facebook – log in or sign up");
+	
+	}
+
+}
